@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const basketball = {
+            name: 'ball',
+            price: 2095
+        }
+
+        const tShirt = {
+            name: 'tshirt',
+            price: 3560
+        }
+        basketball.price += 500;
+        basketball['delivery-time'] = '3 days'
+        console.log(basketball)
+
+        if(tShirt.price < basketball.price){
+            console.log(tShirt);
+        } else {
+            console.log(basketball);
+        }
+        
+        isTheSame();
+
+        function isTheSame(){
+            if (basketball.name === tShirt.name && basketball.price === tShirt.price){
+                console.log('True');
+            } else {
+                console.log('False')
+            }
+        }
+
+
+        let thistring = 'Good Morning';
+        let loweCase = thistring.toLocaleLowerCase();
+        console.log(loweCase);
+
+        
+
+        function repeatThestring (string, times){
+            if(times > 0 ){
+                return string.repeat(times);
+            } else {
+                return 'failed';
+            }
+        }
+        repeatThestring("Salut", 2);
+
+        console.log("Hello".repeat(2));
+        
+    </script>
+</body>
+</html>
