@@ -6,6 +6,18 @@
     <title>DOM</title>
 </head>
 <body>
-    
+    <button onclick="
+    changeText();
+        " class='button1'>Subscribe</button>
+        <script>
+            function changeText(){
+                const button1 = document.querySelector('.button1');
+                if ( button1.innerHTML === 'Subscribe'){
+                    button1.innerHTML = 'Subscribed';
+                } else {
+                    button1.innerHTML = 'Subscribe';
+                }
+            }
+        </script>
 </body>
 </html>
