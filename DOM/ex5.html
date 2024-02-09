@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <p>Amazon Shipping Calculator</p>
-    <input
-      placeholder="Cost of order"
-      class="input-js"
-      onkeydown="
-    handleCost(event);
-    
-    " />
-    <button
-      onclick="
-    totalCalculate();
-    
-    
-    ">
-      Calculate
-    </button>
-    <p class="cost-paragraph">Money</p>
-    <script>
-      function handleCost(event){
-          
-          if (event.key === 'Enter'){
-              totalCalculate();
-      } 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <p>Amazon Shipping Calculator</p>
+  <input
+    placeholder="Cost of order"
+    class="input-js"
+    onkeyup="handleCost(event);" />
+  <button onclick="totalCalculate();">Calculate</button>
+  <p class="cost-paragraph">Money</p>
+  <script>
+    function handleCost(event) {
+      if (event.key === 'Enter') {
+        totalCalculate();
+      }
     }
 
-            function totalCalculate() {
-              const inputItem = document.querySelector(".input-js");
+    function totalCalculate() {
+      const inputItem = document.querySelector(".input-js");
+      const inputValue = Number(inputItem.value);
 
-              let element = Number(inputItem.value) * 100;
-              console.log(element);
-              if (element < 4000) {
-                element = element + 1000;
-              }
-              const result = element.toFixed(2);
-              console.log(element);
+      if (isNaN(inputValue)) {
+        alert("Please enter a valid number for the cost.");
+        return;
+      }
 
-              document.querySelector(".cost-paragraph").innerHTML = `${result / 100} $$`;
-            }
-    </script>
-  </body>
+      let element = inputValue * 100;
+      console.log(element);
+
+      if (element < 4000) {
+        element = element + 1000;
+      }
+
+      const result = (element / 100).toFixed(2); // Keep only two decimal places
+      console.log(result);
+
+      document.querySelector(".cost-paragraph").innerHTML = `$${result}`;
+    }
+  </script>
+</body>
 </html>
