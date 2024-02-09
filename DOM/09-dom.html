@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/styleFor09.css">
     <title>DOM</title>
 </head>
 <body>
+    <p>YouTube Subscribe Button</p>
     <button onclick="
     changeText();
         " class='button1'>Subscribe</button>
@@ -14,8 +16,10 @@
                 const button1 = document.querySelector('.button1');
                 if ( button1.innerHTML === 'Subscribe'){
                     button1.innerHTML = 'Subscribed';
+                    button1.classList.add('button1After');
                 } else {
                     button1.innerHTML = 'Subscribe';
+                    button1.classList.remove('button1After');
                 }
             }
         </script>
