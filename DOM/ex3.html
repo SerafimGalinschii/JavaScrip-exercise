@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <button class="button1" onClick="choosedResult1();">Head</button>
+  <button class="button2" onClick="choosedResult2();">Tail</button>
+  <p class="yourChoose">You chose :</p>
+  <script>
+    function choosedResult1() {
+      const item1 = document.querySelector(".button1");
+      const item3 = document.querySelector(".yourChoose");
+
+      item3.innerHTML = "You chose : Head";
+    }
+
+    function choosedResult2() {
+      const item2 = document.querySelector(".button2");
+      const item3 = document.querySelector(".yourChoose");
+
+      item3.innerHTML = "You chose : Tail";
+    }
+  </script>
+</body>
+</html>
