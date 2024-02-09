@@ -10,3 +10,16 @@
     cursor: pointer;
     padding: 10px;
 }
+
+.button1After{
+    background-color: rgb(221, 200, 200);
+    color: black;
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+    font-size: 0.9rem ;
+    font-weight: 500;
+    border: black;
+    cursor: pointer;
+    padding: 10px;
+}
