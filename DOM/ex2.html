@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      class="button"
+      onclick="
+        showButton();
+        ">
+      9a
+    </button>
+
+    <button
+      class="button2"
+      onclick="
+        changeButton2();
+        
+        ">
+      9b
+    </button>
+    <script>
+      function showButton() {
+        const item = document.querySelector(".button");
+        console.log(item);
+      }
+
+      function changeButton2() {
+        const button2 = document.querySelector(".button2");
+        if (button2.innerHTML === "9b") {
+          button2.innerHTML = "9b done";
+        } else {
+          button2.innerHTML = "9b";
+        }
+      }
+    </script>
+  </body>
+</html>
