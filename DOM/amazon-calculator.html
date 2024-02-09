@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <p>Amazon Shipping Calculator</p>
-    <input  placeholder="Cost of order" class="input-js">
-    <button onclick="
+    <input
+      placeholder="Cost of order"
+      class="input-js"
+      onkeydown="
+    handleCost(event);
+    
+    " />
+    <button
+      onclick="
     totalCalculate();
     
     
-    ">Calculate</button>
-    <p class="cost-paragraph" >Money</p>
+    ">
+      Calculate
+    </button>
+    <p class="cost-paragraph">Money</p>
     <script>
-       
-function totalCalculate(){
-    const inputItem =  document.querySelector('.input-js');
-       
-    let element = Number(inputItem.value) ;
-    if (element < 40 ){
-        element = element + 10;
+      function handleCost(event){
+          
+          if (event.key === 'Enter'){
+              totalCalculate();
+      } 
     }
-    console.log(element);
 
-    document.querySelector('.cost-paragraph').innerHTML = `${element} $$`;
-}
+            function totalCalculate() {
+              const inputItem = document.querySelector(".input-js");
 
+              let element = Number(inputItem.value);
+              if (element < 40) {
+                element = element + 10;
+              }
+              console.log(element);
 
+              document.querySelector(".cost-paragraph").innerHTML = `${element} $$`;
+            }
     </script>
-</body>
+  </body>
 </html>
