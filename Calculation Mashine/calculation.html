@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>
+      <button onclick="
+        upDate('1');
+      ">1</button>
+
+      <button onclick="
+        upDate('2');
+      ">2</button>
+
+      <button onclick="
+        calculation += '3';
+        console.log(calculation);
+      ">3</button>
+
+      <button onclick="
+        upDate('+');
+      ">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        upDate('4');
+      ">4</button>
+
+      <button onclick="
+        upDate('5');
+      ">5</button>
+
+      <button onclick="
+        upDate('6');
+      ">6</button>
+
+      <button onclick="
+        upDate('-');
+      ">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        upDate('7');
+      ">7</button>
+
+      <button onclick="
+        upDate('8');
+      ">8</button>
+
+      <button onclick="
+        upDate('9');
+      ">9</button>
+
+      <button onclick="
+        upDate('*');
+      ">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        upDate('0');
+      ">0</button>
+
+      <button onclick="
+        upDate('.');
+      ">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        console.log(calculation);
+      ">=</button>
+
+      <button onclick="
+        upDate('/');
+      ">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        console.log(calculation);
+        localStorage.setItem('calculation', calculation);
+      ">Clear</button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+      function upDate(choose){
+        calculation += `${choose}`;
+        console.log(calculation);
+        localStorage.setItem('calculation', calculation);
+      }
+
+      
+
+    
+    </script>
+  </body>
+</html>

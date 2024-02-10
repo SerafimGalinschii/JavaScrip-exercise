@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+img{
+    height: 150px;
+    width: 150px;
+}
+h2{
+    font-size: 50px;
+    text-align: center;
+    margin: 70px;
+}
+p{
+    font-size: 20px;
+}
+.buttons{
+    background-color: transparent;
+    border: 3px solid white;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container{
+    margin:auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.container2{
+    text-align: center;
+}
+.resetButton{
+    color: white;
+    background-color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+    
+}
+.div-button-reset{
+    margin: auto;
+    width: 175px;
+}
+.result-icon{
+    height: 50px;
+    width: 50px;
+}
