@@ -2,103 +2,89 @@
 <html>
   <head></head>
   <body>
+    <p class="dispay" >Display result</p>
     <p>
-      <button onclick="
-        upDate('1');
+      <button
+        class="button"
+        onclick="chooseKey('1');
       ">1</button>
 
-      <button onclick="
-        upDate('2');
+      <button
+        onclick="chooseKey('2');
       ">2</button>
 
-      <button onclick="
-        calculation += '3';
-        console.log(calculation);
-      ">3</button>
+      <button
+        onclick="chooseKey('3') ;
+        ">3</button>
 
-      <button onclick="
-        upDate('+');
+      <button
+        onclick="chooseKey('+');
       ">+</button>
     </p>
 
     <p>
-      <button onclick="
-        upDate('4');
+      <button
+        onclick="chooseKey('4');
       ">4</button>
 
-      <button onclick="
-        upDate('5');
-      ">5</button>
+      <button
+        onclick="chooseKey('5');
+      ">5
+      </button>
 
-      <button onclick="
-        upDate('6');
+      <button
+        onclick="chooseKey('6');
       ">6</button>
 
-      <button onclick="
-        upDate('-');
+      <button
+        onclick="chooseKey('-');
       ">-</button>
     </p>
 
     <p>
-      <button onclick="
-        upDate('7');
+      <button
+        onclick="chooseKey('7');
       ">7</button>
 
-      <button onclick="
-        upDate('8');
+      <button
+        onclick="chooseKey('8');
       ">8</button>
 
-      <button onclick="
-        upDate('9');
+      <button
+        onclick="chooseKey('9');
       ">9</button>
 
-      <button onclick="
-        upDate('*');
+      <button
+        onclick="chooseKey('*');
       ">*</button>
     </p>
 
     <p>
-      <button onclick="
-        upDate('0');
+      <button
+        onclick="chooseKey('0');
       ">0</button>
 
-      <button onclick="
-        upDate('.');
+      <button
+        onclick="chooseKey('.');
       ">.</button>
 
-      <button onclick="
-        // Note: eval() takes a string and runs it as code.
-        // Avoid using eval() in real world projects since
-        // it can potentially be given harmful code to run.
-        // Only use eval() for learning purposes.
-        calculation = eval(calculation);
-        console.log(calculation);
+      <button
+        onclick="hadleSum();
       ">=</button>
 
-      <button onclick="
-        upDate('/');
+      <button
+        onclick="chooseKey('/');
       ">/</button>
     </p>
 
     <p>
-      <button onclick="
-        calculation = '';
-        console.log(calculation);
-        localStorage.setItem('calculation', calculation);
+      <button
+        onclick="resetCalculator();
       ">Clear</button>
     </p>
 
-    <script>
-      let calculation = localStorage.getItem('calculation') || '';
-      function upDate(choose){
-        calculation += `${choose}`;
-        console.log(calculation);
-        localStorage.setItem('calculation', calculation);
-      }
-
+    <script src="calculator.js">
       
-
-    
     </script>
   </body>
 </html>
