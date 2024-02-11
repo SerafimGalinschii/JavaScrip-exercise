@@ -9,27 +9,13 @@
   <body>
     <h2>Rock Paper Scissors Game</h2>
     <div class="container">
-      <button
-        class="buttons"
-        onclick="playGame('rock');">
+      <button class="buttons" onclick="playGame('rock');">
         <img src="Images/rock-emoji.png" alt="" />
       </button>
-      <button
-        class="buttons"
-        onclick="
-    
-     playGame('paper');
-
-   ">
+      <button class="buttons" onclick="playGame('paper');">
         <img src="Images/paper-emoji.png" alt="" />
       </button>
-      <button
-        class="buttons"
-        onclick="
-      
-     playGame('scissors');
-
-   ">
+      <button class="buttons" onclick="playGame('scissors');">
         <img src="Images/scissors-emoji.png" alt="" />
       </button>
     </div>
@@ -37,74 +23,63 @@
     <div class="container2">
       <p class="show_result"></p>
       <p class="eachPlayerMove"></p>
-
       <p class="score-info"></p>
     </div>
 
     <div class="div-button-reset">
-      <button
-        class="resetButton"
-        onclick="resetScore()">
-        Reset score
-      </button>
+      <button class="resetButton" onclick="resetScore()">Reset score</button>
     </div>
 
     <script>
+      let score;
+
+      try {
+        score = JSON.parse(localStorage.getItem("score"));
+      } catch (e) {}
+
+      if (!score) {
+        score = {
+          Wins: 0,
+          Losses: 0,
+          Ties: 0,
+        };
+      }
+
       function resetScore() {
         score.Losses = 0;
         score.Ties = 0;
         score.Wins = 0;
-        upDateTheScore();
-        localStorage.removeItem('score');
+
+        updateScore();
+        localStorage.removeItem("score");
       }
 
-      let score = JSON.parse(localStorage.getItem("score")) || {
-        Wins: 0,
-        Losses: 0,
-        Ties: 0,
-      };
-
-      upDateTheScore();
-
-      /*if (!score){
-        score = {
-        Wins: 0,
-        Losses: 0,
-        Ties: 0
-        }
-      }
-      */
+      updateScore();
 
       function playGame(playerMove) {
         const computerMove = pickMove();
         const result = playNextMove(playerMove, computerMove);
 
         calculateScore(result, score);
-        upDateTheScore(result, playerMove, computerMove, score);
-
-        //alert(
-        //           `You choosed ${playerMove}. Computer choosed ${computerMove}. ${result}
-        // Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}.`
-        //         );
+        updateScore(result, playerMove, computerMove, score);
       }
-
 
       function playNextMove(playerMove, computerMove) {
         let result = "";
-        
+
         result = playAsScissors(playerMove, computerMove);
         if (result) {
-          return result
+          return result;
         }
 
         result = playAsPaper(playerMove, computerMove);
         if (result) {
-          return result
+          return result;
         }
 
         result = playAsRock(playerMove, computerMove);
         if (result) {
-          return result
+          return result;
         }
 
         return result;
@@ -167,30 +142,46 @@
         }
       }
 
-      function upDateTheScore(result, playerMove, computerMove, score) {
-        document.querySelector(
-          ".score-info"
-        ).innerHTML = `Wins: ${score.Wins}    Losses: ${score.Losses}    Ties: ${score.Ties}.`;
-        document.querySelector(".show_result").innerHTML = result;
-        document.querySelector(
-          ".eachPlayerMove"
-        ).innerHTML = `You choosed ${getMoveIcon(playerMove)} Computer choosed ${getMoveIcon(computerMove)}`;
+      function updateScore(result, playerMove, computerMove, score) {
+        if (result) {
+          document.querySelector(".show_result").innerHTML = result;
+        } else {
+          document.querySelector(".show_result").innerHTML =
+            "Start the game! Please pick a move.";
+        }
 
-        localStorage.setItem("score", JSON.stringify(score));
+        if (score) {
+          document.querySelector(
+            ".score-info"
+          ).innerHTML = `Wins: ${score.Wins}.    Losses: ${score.Losses}.    Ties: ${score.Ties}.`;
+          localStorage.setItem("score", JSON.stringify(score));
+        } else {
+          document.querySelector(".score-info").innerHTML = "";
+        }
+
+        if (playerMove && computerMove) {
+          document.querySelector(
+            ".eachPlayerMove"
+          ).innerHTML = `You choosed ${getMoveIcon(
+            playerMove
+          )} Computer choosed ${getMoveIcon(computerMove)}`;
+        } else {
+          document.querySelector(".eachPlayerMove").innerHTML = "";
+        }
       }
 
-      function getMoveIcon(move){
-        if (move === 'rock'){
-          return `<img class="result-icon" src="Images/rock-emoji.png" alt="" />`
+      function getMoveIcon(move) {
+        if (move === "rock") {
+          return `<img class="result-icon" src="Images/rock-emoji.png" alt="" />`;
         }
-        if (move === 'scissors'){
-          return `<img class="result-icon" src="Images/scissors-emoji.png" alt="" />`
+        if (move === "scissors") {
+          return `<img class="result-icon" src="Images/scissors-emoji.png" alt="" />`;
         }
-        if (move === 'paper'){
-          return `<img class="result-icon" src="Images/paper-emoji.png" alt="" />`
+        if (move === "paper") {
+          return `<img class="result-icon" src="Images/paper-emoji.png" alt="" />`;
         }
+        
       }
-      
 
       function pickMove() {
         let computerMove = "";
