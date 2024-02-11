@@ -53,3 +53,35 @@ p{
     height: 50px;
     width: 50px;
 }
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .buttons{
+        background-color: transparent;
+        border: 3px solid white;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 10px;
+    }
+    img{
+        height: 100px;
+        width: 100px;
+    }
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 599px) {
+    .buttons{
+        background-color: transparent;
+        border: 3px solid white;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 10px;
+    }
+    img{
+        height: 70px;
+        width: 70px;
+    }
+  }
