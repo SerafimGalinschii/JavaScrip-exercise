@@ -1,16 +1,31 @@
-const toDoArray = [];
+const toDoArray = ["anfih", "akgsajh"];
+let list = "";
 
-function addToList() {
+forLoop();
+
+function addToList(num, html,list) {
   const toDo = document.querySelector(".input");
   const taskName = toDo.value;
   console.log(taskName);
   toDoArray.push(taskName);
   console.log(toDoArray);
+  forLoop(num, html,list);
 }
+
+function forLoop() {
+  for (i = 0; i < toDoArray.length; i++) {
+    const num = toDoArray[i];
+    const html = `<p>${num}</p><br>`;
+    list += html;
+    console.log(list);
+  }
+  document.querySelector(".divclass").innerHTML = list;
+}
+
 function displayOnKey(event) {
   const toDo = document.querySelector(".input");
   const taskName = toDo.value;
-  
+
   if (event.key === "Enter") {
     toDoArray.push(taskName);
     console.log(toDoArray);
