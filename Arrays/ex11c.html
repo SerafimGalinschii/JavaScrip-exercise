@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array = [10,20,30,50]
+        function swapArray(array){
+            const indexnum = array.length - 1;
+        
+            const  lastNum = array[indexnum];
+            
+            const firstNum = array[0];
+
+            array[0] = lastNum;
+
+            array[indexnum] = firstNum;
+            
+            return array;
+
+    }
+
+    console.log(swapArray([20,30,40]));
+    </script>
+</body>
+</html>
