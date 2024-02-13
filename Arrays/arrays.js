@@ -1,21 +1,22 @@
 const toDoArray = ["anfih", "akgsajh"];
-let list = "";
 
-forLoop();
 
-function addToList(num, html,list) {
+
+addTask();
+function pushToArray() {
   const toDo = document.querySelector(".input");
   const taskName = toDo.value;
-  console.log(taskName);
   toDoArray.push(taskName);
-  console.log(toDoArray);
-  forLoop(num, html,list);
+  
+  addTask();
 }
 
-function forLoop() {
+function addTask() {
+  let list = "";
   for (i = 0; i < toDoArray.length; i++) {
-    const num = toDoArray[i];
-    const html = `<p>${num}</p><br>`;
+    let num = toDoArray[i];
+    let html = `<p>${num}</p>`;
+    
     list += html;
     console.log(list);
   }
@@ -32,6 +33,7 @@ function displayOnKey(event) {
   } else {
     return "Error";
   }
+  addToArray();
 }
 
 const toDoList = ["english", "sofware", "selfdevelop"];
