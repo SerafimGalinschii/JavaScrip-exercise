@@ -10,6 +10,10 @@ const toDoList = [
   {
     name: "Start Next.JS",
     dueDate: "26/02/2024",
+  },
+  {
+    name: "Start Exercise",
+    dueDate: "26/02/2024",
   }
 ];
 
@@ -37,7 +41,7 @@ function renderToDOList() {
     <p class="list">
     ${name}  
     </p>
-    <p class="list"> ${dueDate} </p>
+    <p class="list2"> ${dueDate} </p>
     <button class="delete-todo-button" onclick = "toDoList.splice(${i}, 1); renderToDOList(); ">Delete</button>
     </div>
 
