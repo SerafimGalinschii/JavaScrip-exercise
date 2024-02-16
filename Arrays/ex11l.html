@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function minMax(num){
+            const result = {
+                min : num[0],
+                max : num[0],
+        }
+
+            for (let i = 0; i < num.length ; i++){
+                let value = num[i];
+                if(value < result.min){
+                    result.min = value;
+                }
+
+                if(value > result.max){
+                    result.max = value;
+                }
+            }
+            return result
+        }
+
+        console.log(minMax([-5,7,16,-8,568,7]))
+    </script>
+</body>
+</html>
