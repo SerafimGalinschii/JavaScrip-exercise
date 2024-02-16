@@ -1,11 +1,15 @@
 const toDoList = [
   {
-    name: "JS Cours",
+    name: "Finish JS Course",
     dueDate: "16/02/2024",
   },
   {
-    name: "JS Cours",
+    name: "Start React Course",
     dueDate: "18/02/2024",
+  },
+  {
+    name: "Start Next.JS",
+    dueDate: "26/02/2024",
   }
 ];
 
@@ -29,11 +33,14 @@ function renderToDOList() {
     const toDoObject = toDoList[i];
     const { name, dueDate } = toDoObject;
     let html = `
+    <div class="js-html">
     <p class="list">
     ${name}  
     </p>
     <p class="list"> ${dueDate} </p>
     <button class="delete-todo-button" onclick = "toDoList.splice(${i}, 1); renderToDOList(); ">Delete</button>
+    </div>
+
     `;
     console.log(toDoList);
     toDoListHTML += html;

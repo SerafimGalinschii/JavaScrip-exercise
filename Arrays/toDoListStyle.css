@@ -9,20 +9,27 @@ body {
   }
   .list{
     color: #FFF67E;
-    font-size: 25px;
+    font-size: 20px;
     margin: 30px;
+    width: 200px;
+  }
+  .list2{
+    color: #FFF67E;
+    font-size: 20px;
+   display: flex;
+    ju
   }
   .js-html{
     display: flex;
     justify-content: space-between;
-    width: 500px;
-    margin-left: 70px;
+    width: 565px;
+    margin-left:;
   }
   .container{
     margin: auto;
     width: 30%;
     text-align: center;
-    width: 40%;
+    width: 600px;
   }
   
   .todo-grid,
