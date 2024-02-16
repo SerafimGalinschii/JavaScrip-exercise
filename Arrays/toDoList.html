@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="toDoListStyle.css">
+    <link rel="stylesheet" href="toDoListStyle.css" />
     <title>Arrays</title>
   </head>
   <body>
-    <p></p>
-    
-    <input placeholder="To do name" class="nameInput"
-    onkeydown="displayOnKey(event); " />
-    <input type="date" class="dateInput">
-    <button class="add-todo-button" onclick="pushToArray();">Add</button>
-    <div class="divclass"></div>
+    <div class="container">
+      <h2>Your To Do List</h2>
+      <input
+        placeholder="To do name"
+        class="nameInput"
+        onkeydown="displayOnKey(event); " />
+      <input type="date" class="dateInput" />
+      <button class="add-todo-button" onclick="pushToArray();">Add Task</button>
+      <div class="divclass"></div>
+    </div>
+
     <script src="toDoList.js"></script>
   </body>
 </html>
