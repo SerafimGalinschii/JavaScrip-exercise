@@ -9,24 +9,28 @@
     <script>
         function minMax(num){
             const result = {
-                min : num[0],
-                max : num[0],
+                min : null,
+                max : null,
         }
 
             for (let i = 0; i < num.length ; i++){
                 let value = num[i];
-                if(value < result.min){
+                if(result.min === null || value < result.min ){
                     result.min = value;
                 }
 
-                if(value > result.max){
+                if(result.max === null || value > result.max){
                     result.max = value;
                 }
+
+                
             }
             return result
         }
 
-        console.log(minMax([-5,7,16,-8,568,7]))
+        console.log(minMax([-5,7,16,-8,568,7]));
+        console.log(minMax([]));
+        console.log(minMax([3]));
     </script>
 </body>
 </html>
