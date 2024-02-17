@@ -4,7 +4,8 @@
   <body>
     <script>
       function removeEgg(foods) {
-        const reversedFoods = foods.reverse();
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
 
         const result = [];
         let eggsRemoved = 0;
@@ -21,7 +22,9 @@
         return result.reverse();
       }
 
-      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(removeEgg(foods));
+      console.log(foods);
     </script>
   </body>
 </html>
